@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aesthetic Kalakari | Handmade Crochet & Lippan Art</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Custom Theme configuration for premium editorial colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FDFCF7',   /* Pristine Ivory */
+                            100: '#FAF8F0',  /* Light Editorial Cream */
+                            200: '#F5F0E1',  /* Warm Sand */
+                            300: '#EAE1CE',  /* Accent Sandstone */
+                            800: '#3D382E',  /* Clay Shadow */
+                            900: '#211E18',  /* Deep Walnut */
+                        },
+                        terracotta: {
+                            100: '#F8ECE8',
+                            500: '#C97A63',
+                            600: '#B85D43',
+                            700: '#94442F',
+                        },
+                        sage: {
+                            50: '#F4F6F2',
+                            100: '#EEF0EC',
+                            500: '#828C74',
+                            600: '#5B6651',  /* Editorial Olive/Sage Green */
+                            700: '#4A5342',
+                        },
+                        accent: {
+                            gold: '#D4AF37',
+                            goldlight: '#F4E8C1'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern reset for fluid interactions and zero mobile horizontal scrolls */
+        body {
+            background-color: #FAF8F0;
+            color: #211E18;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .editorial-title {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: -0.01em;
+        }
+
+        /* Fluid custom scrollbar configurations */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #EAE1CE;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C97A63;
+        }
+
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Micro-animations */
+        .animate-fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="selection:bg-accent-goldlight selection:text-cream-900 pb-20 md:pb-0">
+
+    <div class="bg-cream-900 text-cream-100 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase py-2.5 px-4 text-center font-bold border-b border-accent-gold/25 relative z-50">
+        <span>Handmade Gifts • Order Directly on WhatsApp</span>
+    </div>
+
+    <!-- Global Toast Alert (Mobile Optimized Position) -->
+    <div id="toast-notification" class="fixed top-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-80 z-50 bg-cream-900 text-cream-50 text-xs py-3 px-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-accent-gold/20 transform -translate-y-24 opacity-0 transition-all duration-500 pointer-events-none">
+        <span class="w-2.5 h-2.5 rounded-full bg-accent-gold animate-ping shrink-0"></span>
+        <span id="toast-text" class="font-medium tracking-wide">Item added to your bag!</span>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-cream-100/95 backdrop-blur-md border-b border-cream-200/80 transition-all duration-300 py-3 sm:py-4" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+            
+            <!-- Logo / Brand Signature -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="h-10 w-10 sm:h-12 sm:w-12 relative flex items-center justify-center shrink-0">
+                    <svg class="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="goldGloss" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#F4E8C1" />
+                                <stop offset="40%" stop-color="#D4AF37" />
+                                <stop offset="100%" stop-color="#9C7A1E" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" stroke="url(#goldGloss)" stroke-width="1.5" stroke-dasharray="160 10" stroke-dashoffset="40" fill="none" />
+                    </svg>
+                    <!-- Core high fidelity logo image with fallback control -->
+                    <img src="logo-without-bg_2.png" alt="Aesthetic Kalakari Logo" class="absolute inset-0 h-full w-full object-contain transition-all duration-300 group-hover:scale-105 z-10" onload="this.classList.remove('opacity-0')" onerror="this.classList.add('opacity-0')">
+                </div>
+                <div class="flex flex-col">
+                    <span class="editorial-title text-lg sm:text-2xl font-bold tracking-tight text-cream-900 leading-none">Aesthetic Kalakari</span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-sage-600 font-bold mt-0.5">Handmade Studio</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Items -->
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[10px] lg:text-[11px] tracking-[0.2em] uppercase font-bold text-cream-800">
+                <a href="#about" class="hover:text-terracotta-600 transition-colors duration-200">Our Studio</a>
+                <a href="#shop" class="hover:text-terracotta-600 transition-colors duration-200">Catalog</a>
+                <a href="#custom-order" class="hover:text-terracotta-600 transition-colors duration-200">Custom Made</a>
+                <a href="#testimonials" class="hover:text-terracotta-600 transition-colors duration-200">Reviews</a>
+            </nav>
+
+            <!-- Bag Navigation Interface -->
+            <div class="flex items-center space-x-3 sm:space-x-5">
+                <a href="https://instagram.com" target="_blank" class="text-cream-800 hover:text-terracotta-600 text-lg p-2 transition-colors duration-200" title="Visit Instagram" aria-label="Instagram Profile">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <button onclick="toggleCart()" class="relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-cream-200 hover:bg-cream-300 rounded-full transition-all duration-300 group" aria-label="Open Shopping Bag">
+                    <i class="fa-solid fa-shopping-bag text-cream-900 text-xs group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] uppercase tracking-wider font-bold text-cream-900 hidden sm:inline">My Bag</span>
+                    <span id="cart-count" class="bg-terracotta-600 text-white text-[9px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream-100/95 backdrop-blur-md border-t border-cream-200/85 shadow-2xl flex justify-around items-center py-2 px-2">
+        <a href="#about" class="flex flex-col items-center gap-1 text-cream-800 hover:text-terracotta-600 py-1.5 w-16 text-center">
+            <i class="fa-solid fa-compass text-sm"></i>
+            <span class="text-[8px] font-bold uppercase tracking-wider">About Us</span>
+        </a>
+        <a href="#shop" class="flex flex-col items-center gap-1 text-cream-800 hover:text-terracotta-600 py-1.5 w-16 text-center">
+            <i class="fa-solid fa-store text-sm"></i>
+            <span class="text-[8px] font-bold uppercase tracking-wider">Catalog</span>
+        </a>
+        <a href="#custom-order" class="flex flex-col items-center gap-1 text-cream-800 hover:text-terracotta-600 py-1.5 w-16 text-center">
+            <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+            <span class="text-[8px] font-bold uppercase tracking-wider">Custom</span>
+        </a>
+        <button onclick="toggleCart()" class="flex flex-col items-center gap-1 text-cream-800 hover:text-terracotta-600 py-1.5 w-16 text-center relative">
+            <i class="fa-solid fa-shopping-bag text-sm"></i>
+            <span class="text-[8px] font-bold uppercase tracking-wider">My Bag</span>
+            <span id="mobile-cart-badge" class="absolute top-0 right-3 bg-terracotta-600 text-white text-[8px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </button>
+    </div>
+
+    <section class="relative bg-[#FAF8F0] py-12 sm:py-16 md:py-24 border-b border-cream-300/60 overflow-hidden" id="about">
+        <!-- Minimal Grid Art Background -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="dot-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <circle cx="15" cy="15" r="1.2" fill="#3D382E" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#dot-grid)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+            
+            <!-- Hero Left Side: Editorial Content -->
+            <div class="md:col-span-7 space-y-5 sm:space-y-6 md:space-y-7 text-center md:text-left order-2 md:order-1 animate-fade-in">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-cream-200/60 rounded-full border border-accent-gold/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse"></span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-cream-800 font-bold">01 Handmade Studio</span>
+                </div>
+                
+                <h1 class="editorial-title text-3xl sm:text-5xl lg:text-6xl text-cream-900 leading-[1.2] md:leading-[1.15] font-light">
+                    Beautiful handmade <br class="hidden sm:inline">
+                    <span class="italic font-normal text-terracotta-600">crochet items</span> <br>
+                    & Lippan mirror art.
+                </h1>
+                
+                <p class="text-cream-800 text-xs sm:text-sm font-light leading-relaxed max-w-lg mx-auto md:mx-0">
+                    We make beautiful things by hand, one stitch and one mirror at a time. They are simple, warm, and perfect for your home or as a special gift.
+                </p>
+
+                <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                    <a href="#shop" class="px-6 py-3.5 sm:px-8 bg-cream-900 hover:bg-terracotta-600 text-cream-50 text-[10px] uppercase tracking-[0.2em] font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-center">
+                        View Products
+                    </a>
+                    <a href="#custom-order" class="px-6 py-3.5 sm:px-8 bg-transparent border border-cream-300 hover:bg-cream-200 text-cream-900 text-[10px] uppercase tracking-[0.2em] font-bold rounded-full transition-all duration-300 text-center">
+                        Order Custom Pieces
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right Side: Rotating Logo Frame -->
+            <div class="md:col-span-5 flex justify-center order-1 md:order-2 animate-fade-in" style="animation-delay: 0.15s;">
+                <div class="relative w-72 h-80 sm:w-80 sm:h-96 bg-cream-50 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden p-6 sm:p-8 border border-cream-200 shadow-xl flex flex-col justify-between items-center group">
+                    <!-- Elegant Corner Accents -->
+                    <div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-accent-gold/40"></div>
+                    <div class="absolute top-4 right-4 w-4 h-4 border-t border-r border-accent-gold/40"></div>
+                    <div class="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-accent-gold/40"></div>
+                    <div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-accent-gold/40"></div>
+
+                    <div class="text-center">
+                        <p class="text-[7px] sm:text-[8px] tracking-[0.3em] uppercase text-sage-600 font-extrabold">AUTHENTIC BRAND</p>
+                        <p class="text-[9px] tracking-[0.1em] text-cream-800 font-light mt-0.5">100% HANDMADE</p>
+                    </div>
+
+                    <!-- Monogram Ring Container -->
+                    <div class="relative py-4 flex items-center justify-center">
+                        <div class="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full border border-dashed border-accent-gold/30 animate-[spin_80s_linear_infinite]"></div>
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 relative flex items-center justify-center">
+                            <img src="logo-without-bg_2.png" alt="Aesthetic Kalakari Logo" class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-500 group-hover:scale-105" onload="this.classList.remove('opacity-0')" onerror="this.classList.add('opacity-0')">
+                        </div>
+                    </div>
+
+                    <div class="text-center z-10">
+                        <p class="editorial-title text-xs sm:text-sm italic text-terracotta-600">"Made by hand with love and care."</p>
+                        <p class="text-[8px] sm:text-[9px] tracking-[0.2em] text-cream-900 uppercase font-extrabold mt-1">ESTD. 2024 • BENGALURU</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-[#FDFCF7]" id="shop">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <!-- Filter Header & Sideways Categories Row -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-cream-200">
+                <div class="space-y-2 sm:space-y-3">
+                    <span class="text-xs uppercase tracking-[0.25em] text-terracotta-600 font-extrabold block">Our Shop</span>
+                    <h2 class="editorial-title text-3xl sm:text-5xl font-light text-cream-900">Choose Your Favorites</h2>
+                    <p class="text-cream-800 text-xs font-light max-w-md">Click any item to add it to your order bag. When you are ready, checkout directly over WhatsApp.</p>
+                </div>
+                
+                <!-- Sideways Scroll assist for mobile, normal layout on desktop -->
+                <div class="relative mt-6 md:mt-0">
+                    <div class="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-cream-50 to-transparent pointer-events-none z-10"></div>
+                    
+                    <div class="flex gap-2 overflow-x-auto pb-1.5 md:pb-0 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+                        <button onclick="filterCatalog('all')" id="filter-btn-all" class="filter-btn shrink-0 px-5 py-2.5 bg-cream-900 text-cream-50 rounded-full text-[10px] uppercase tracking-widest font-extrabold transition-all duration-300">
+                            All Items
+                        </button>
+                        <button onclick="filterCatalog('crochet')" id="filter-btn-crochet" class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300">
+                            Crochet Items
+                        </button>
+                        <button onclick="filterCatalog('lippan')" id="filter-btn-lippan" class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300">
+                            Lippan Mirror Art
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Catalog Card Grid matrix -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10" id="product-grid">
+                <!-- Javascript updates product list here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#5B6651] py-16 sm:py-24 border-y border-sage-700/60 relative text-cream-50" id="custom-order">
+        <!-- Leaf organic background design watermark -->
+        <div class="absolute inset-0 opacity-[0.05] pointer-events-none select-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M-10,50 Q20,30 50,50 T110,50" fill="none" stroke="#FDFCF7" stroke-width="0.5"/>
+                <path d="M-10,30 Q30,60 70,30 T110,30" fill="none" stroke="#FDFCF7" stroke-width="0.5"/>
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+                
+                <!-- Left Column text (Editorial style) -->
+                <div class="md:col-span-5 space-y-5 sm:space-y-6">
+                    <span class="text-xs uppercase tracking-[0.25em] text-accent-gold font-extrabold block">Custom Orders</span>
+                    <h2 class="editorial-title text-3xl sm:text-4xl lg:text-5xl font-light text-cream-100 leading-tight">
+                        Want something <span class="italic font-normal text-accent-goldlight">custom made?</span>
+                    </h2>
+                    
+                    <p class="text-cream-200 text-xs sm:text-sm leading-relaxed font-light">
+                        Choose your favorite colors, the size you need, or a special date. We will make a beautiful custom piece just for you.
+                    </p>
+
+                    <!-- Safe guards card layout -->
+                    <div class="bg-sage-700/40 p-5 sm:p-6 rounded-3xl border border-sage-500/30 space-y-4 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <span class="w-9 h-9 rounded-full bg-[#4A5342] flex items-center justify-center text-accent-goldlight shrink-0">
+                                <i class="fa-solid fa-clock text-xs"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-cream-100">Quick Designs</h4>
+                                <p class="text-cream-200 text-[10px] sm:text-[11px] font-light mt-0.5">We will share a simple layout design and price details on WhatsApp within 24 hours.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-9 h-9 rounded-full bg-[#4A5342] flex items-center justify-center text-accent-goldlight shrink-0">
+                                <i class="fa-solid fa-gift text-xs"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-cream-100">Beautiful Gift Packaging</h4>
+                                <p class="text-cream-200 text-[10px] sm:text-[11px] font-light mt-0.5">Every order comes packed beautifully in eco-friendly gift boxes with tags.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Form with contrast white/cream container styling -->
+                <div class="md:col-span-7 bg-cream-50 text-cream-900 p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-cream-200 shadow-2xl space-y-6">
+                    <div class="pb-4 border-b border-cream-200">
+                        <h3 class="editorial-title text-2xl text-cream-900">Custom Order Maker</h3>
+                        <p class="text-[9px] text-cream-800 uppercase tracking-widest mt-1">Fill out this quick form to send us a message on WhatsApp</p>
+                    </div>
+
+                    <!-- Dynamic Input options -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-cream-800 mb-2">What would you like us to make?</label>
+                            <select id="custom-item" class="w-full bg-cream-100 border border-cream-300/60 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                                <option value="Bespoke Crochet Flower Bouquet">Custom Crochet Flower Bouquet</option>
+                                <option value="Custom Festive Rakhi Set">Custom Festive Rakhi Set</option>
+                                <option value="Lippan Clay Mirror Mandala">Lippan Clay Mirror Frame</option>
+                                <option value="Handcrafted Lippan Ganesha Wall Idol">Lippan Ganesha Wall Frame</option>
+                                <option value="Custom Knit Eyeglass Sleeve / Purse">Custom Knitted Glasses Sleeve or Purse</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-cream-800 mb-2">Your Favorite Colors</label>
+                                <input type="text" id="custom-colors" placeholder="e.g. Green and White" class="w-full bg-cream-100 border border-cream-300/60 rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                            </div>
+                            <div>
+                                <label class="block text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-cream-800 mb-2">Size or Dimensions</label>
+                                <input type="text" id="custom-size" placeholder="e.g. Medium size, 12 inches" class="w-full bg-cream-100 border border-cream-300/60 rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-cream-800 mb-2">When do you need it? (Occasion / Date)</label>
+                            <input type="text" id="custom-occasion" placeholder="e.g. Birthday gift, needed by next Friday" class="w-full bg-cream-100 border border-cream-300/60 rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                        </div>
+                    </div>
+
+                    <button onclick="sendCustomWhatsApp()" class="w-full py-3.5 sm:py-4 bg-terracotta-600 hover:bg-terracotta-700 text-cream-50 rounded-xl font-bold tracking-widest text-[10px] sm:text-xs uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Send Custom Request
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-[#EAE1CE]/40 border-b border-cream-300" id="testimonials">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-sage-600 font-extrabold">Loved & Cherished</span>
+                <h2 class="editorial-title text-3xl sm:text-4xl font-light text-cream-900">Happy Customers</h2>
+                <p class="text-cream-800 text-xs font-light max-w-md mx-auto">Real reviews from people who love and support our handmade work.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Review Card 1 -->
+                <div class="bg-cream-50 p-6 sm:p-8 rounded-3xl border border-cream-200/80 flex flex-col justify-between space-y-6 shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-accent-gold gap-1 text-[10px]">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-cream-900 font-light text-xs sm:text-sm italic leading-relaxed">
+                            "The crochet flower bouquet I bought for my mom still looks fresh and beautiful—she loves it! You can see the effort in every stitch."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Ananya R.</h4>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Bengaluru</p>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="bg-cream-50 p-6 sm:p-8 rounded-3xl border border-cream-200/80 flex flex-col justify-between space-y-6 shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-accent-gold gap-1 text-[10px]">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-cream-900 font-light text-xs sm:text-sm italic leading-relaxed">
+                            "My Lippan clay frame is the best part of our living room now. The mirrors shine beautifully when the sun sets."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Karthik & Meera</h4>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Pune</p>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="bg-cream-50 p-6 sm:p-8 rounded-3xl border border-cream-200/80 flex flex-col justify-between space-y-6 shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-accent-gold gap-1 text-[10px]">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-cream-900 font-light text-xs sm:text-sm italic leading-relaxed">
+                            "The custom Rakhis arrived early and were packed so beautifully. Choosing handmade gifts is always a great decision."
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Sneha P.</h4>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Surat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Grid -->
+    <section class="bg-cream-100 py-16 border-t border-cream-300/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-8">
+            <div class="space-y-2">
+                <p class="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-terracotta-600 font-extrabold">Behind the Scenes</p>
+                <h3 class="editorial-title text-2xl sm:text-3xl font-light text-cream-900">See Our Instagram Feed</h3>
+                <a href="https://instagram.com" target="_blank" class="text-xs font-bold text-cream-800 hover:text-terracotta-600 tracking-wide inline-flex items-center gap-2">
+                    <i class="fa-brands fa-instagram text-sm"></i> @aesthetickalakari_
+                </a>
+            </div>
+
+            <!-- Grid: Optimized columns per viewport -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-wand-magic-sparkles text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">NEW RAKHIS</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-scissors text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">MAKING PROCESS</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-shapes text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">MIRROR ART WORK</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-box-open text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">BOUQUET PACKING</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-house-chimney text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">STUDIO TOUR</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl border border-cream-200 aspect-square bg-cream-50 flex items-center justify-center p-4 text-center">
+                    <div>
+                        <i class="fa-solid fa-heart text-cream-800/40 text-lg mb-2 block"></i>
+                        <p class="text-[9px] uppercase font-bold tracking-wider text-cream-900">MADE WITH CARE</p>
+                    </div>
+                    <div class="absolute inset-0 bg-cream-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-cream-50">
+                        <i class="fa-brands fa-instagram text-lg mb-1"></i>
+                        <span class="text-[8px] tracking-wider uppercase font-bold">View Post</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#23201B] text-cream-100 py-12 sm:py-16 border-t border-accent-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+            
+            <!-- Branding bio -->
+            <div class="md:col-span-4 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 sm:h-12 sm:w-12 relative flex items-center justify-center shrink-0">
+                        <img src="logo-without-bg_2.png" alt="Aesthetic Kalakari Logo" class="absolute inset-0 h-full w-full object-contain filter brightness-110 z-10" onload="this.classList.remove('opacity-0')" onerror="this.classList.add('opacity-0')">
+                    </div>
+                    <div>
+                        <h3 class="editorial-title text-xl font-light tracking-wide text-cream-50">Aesthetic Kalakari</h3>
+                        <p class="text-[8px] uppercase tracking-[0.25em] text-accent-gold font-bold mt-0.5">Handmade Studio India</p>
+                    </div>
+                </div>
+                <p class="text-cream-300 text-xs font-light leading-relaxed">
+                    We make crochet items and clay mirror art in small groups. Everything is made carefully by hand in our Bengaluru studio.
+                </p>
+                <div class="flex gap-4 text-sm text-cream-300 pt-1">
+                    <a href="https://instagram.com" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://whatsapp.com" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="WhatsApp"><i class="fa-solid fa-phone"></i></a>
+                    <a href="https://pinterest.com" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <!-- Links list -->
+            <div class="md:col-span-2 space-y-3">
+                <h4 class="text-xs uppercase tracking-wider font-bold text-accent-gold">Links</h4>
+                <ul class="text-xs text-cream-300 space-y-2 font-light">
+                    <li><a href="#about" class="hover:text-white transition">About Our Studio</a></li>
+                    <li><a href="#shop" class="hover:text-white transition">View Catalog</a></li>
+                    <li><a href="#custom-order" class="hover:text-white transition">Custom Orders</a></li>
+                    <li><a href="#testimonials" class="hover:text-white transition">Reviews</a></li>
+                </ul>
+            </div>
+
+            <!-- Product categories -->
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="text-xs uppercase tracking-wider font-bold text-accent-gold">Our Categories</h4>
+                <ul class="text-xs text-cream-300 space-y-2 font-light">
+                    <li><a href="#shop" onclick="filterCatalog('crochet')" class="hover:text-white transition">Handmade Crochet Rakhis</a></li>
+                    <li><a href="#shop" onclick="filterCatalog('crochet')" class="hover:text-white transition">Woven Yarn Purses</a></li>
+                    <li><a href="#shop" onclick="filterCatalog('lippan')" class="hover:text-white transition">Clay Mirror Wall Art</a></li>
+                    <li><a href="#shop" onclick="filterCatalog('lippan')" class="hover:text-white transition">Handmade Clay Ganesha</a></li>
+                </ul>
+            </div>
+
+            <!-- Studio Statement -->
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="text-xs uppercase tracking-wider font-bold text-accent-gold">Our Guarantee</h4>
+                <p class="text-xs text-cream-300 leading-relaxed font-light">
+                    All products are packed safely in simple paper wraps. We ship our orders carefully across India and worldwide.
+                </p>
+                <div class="pt-1">
+                    <span class="text-[8px] sm:text-[9px] tracking-widest text-cream-100 uppercase font-bold bg-cream-800 px-3 py-1.5 rounded-full border border-cream-700">HANDMADE EST. 2024</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-cream-800 flex flex-col md:flex-row justify-between items-center text-[9px] sm:text-[10px] text-cream-300 font-light tracking-wider uppercase gap-4 text-center">
+            <p>© 2026 Aesthetic Kalakari Studio. All Rights Reserved.</p>
+            <p class="flex gap-4">
+                <a href="#" class="hover:text-white">Privacy</a>
+                <span>•</span>
+                <a href="#" class="hover:text-white">Terms of Use</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-[92%] sm:w-112 max-w-md bg-cream-50 shadow-2xl border-l border-cream-300 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+        
+        <!-- Drawer Header -->
+        <div class="p-4 sm:p-6 border-b border-cream-200 flex justify-between items-center bg-cream-100">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-shopping-bag text-terracotta-600 text-lg"></i>
+                <h3 class="editorial-title text-xl sm:text-2xl text-cream-900">Your Order Bag</h3>
+            </div>
+            <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-cream-200 hover:bg-cream-300 flex items-center justify-center text-cream-800 transition" aria-label="Close Shopping Bag">
+                <i class="fa-solid fa-times text-xs"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable dynamic contents -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4" id="cart-items">
+            <!-- Appended via JavaScript -->
+        </div>
+
+        <!-- Calculations footer block -->
+        <div class="p-4 sm:p-6 border-t border-cream-200 bg-cream-100 space-y-4">
+            <div class="space-y-1.5">
+                <div class="flex justify-between items-center text-xs text-cream-800">
+                    <span>Selected Items</span>
+                    <span id="cart-subtotal-qty" class="font-bold">0 items</span>
+                </div>
+                <div class="flex justify-between items-end">
+                    <span class="editorial-title text-lg text-cream-900 font-bold">Total Cost</span>
+                    <span id="cart-total" class="text-xl font-bold text-terracotta-600">₹0</span>
+                </div>
+                <p class="text-[9px] text-cream-800 font-light mt-1 italic leading-relaxed">
+                    *We will compile your list. When you click below, it opens in WhatsApp so you can send us the order quickly.
+                </p>
+            </div>
+
+            <button onclick="checkoutWhatsApp()" class="w-full py-3.5 sm:py-4 bg-cream-900 hover:bg-terracotta-600 text-cream-50 rounded-xl font-bold tracking-widest text-[9px] sm:text-[10px] uppercase transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg active:scale-95">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Checkout via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Veil Backdrop overlay -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-cream-900/20 backdrop-blur-sm z-40 hidden transition-opacity"></div>
+
+    <!-- Floating WhatsApp Setup config -->
+    <div class="fixed bottom-16 left-3 right-3 sm:left-4 sm:right-auto sm:bottom-4 z-40 bg-cream-900 text-cream-50 text-[10px] px-4 py-3 rounded-2xl shadow-2xl flex flex-col gap-2 max-w-xs border border-accent-gold/20">
+        <div class="flex items-center justify-between gap-4">
+            <span class="font-extrabold tracking-wider uppercase text-[8px] text-accent-gold">WhatsApp Shop Number</span>
+            <button onclick="this.parentElement.parentElement.remove()" class="text-cream-300 hover:text-white p-1" aria-label="Close Config">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <p class="text-[9px] text-cream-300">Set the phone number where orders will be sent:</p>
+        <div class="flex gap-2">
+            <input type="text" id="config-phone" value="+919876543210" class="bg-cream-800 text-cream-50 px-2.5 py-1.5 rounded-lg border border-cream-700 w-full focus:outline-none focus:border-accent-gold text-[10px]">
+            <button onclick="updateWhatsAppNumber()" class="bg-accent-gold text-cream-900 px-3 py-1.5 rounded-lg font-bold hover:bg-white transition text-[9px] shrink-0">Save</button>
+        </div>
+    </div>
+
+    <script>
+        let WHATSAPP_PHONE = "919876543210";
+
+        function updateWhatsAppNumber() {
+            const input = document.getElementById('config-phone');
+            let sanitized = input.value.replace(/\+/g, '').replace(/\s/g, '').trim();
+            if (sanitized) {
+                WHATSAPP_PHONE = sanitized;
+                showToast(`WhatsApp number set to: +${WHATSAPP_PHONE}`);
+            }
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('toast-notification');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = text;
+            
+            toast.classList.remove('-translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.add('-translate-y-24', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // List of products with simple descriptive words
+        const PRODUCTS = [
+            {
+                id: "crochet-rakhi",
+                name: "Handmade Crochet Rakhi",
+                category: "crochet",
+                price: 149,
+                label: "Crochet",
+                description: "A beautiful orange and red flower Rakhi made with soft thread and golden beads.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FDFBF7" rx="20"/>
+                    <path d="M5,50 Q25,35 95,50" fill="none" stroke="#C97A63" stroke-width="2" stroke-dasharray="1 1"/>
+                    <path d="M5,50 Q25,65 95,50" fill="none" stroke="#B85D43" stroke-width="1.5"/>
+                    <g transform="translate(50,50)">
+                        <circle cx="0" cy="0" r="28" fill="none" stroke="#B85D43" stroke-width="4" stroke-dasharray="8 3"/>
+                        <path d="M0,0 M-20,-20 Q0,-35 20,-20 Q35,0 20,20 Q0,35 -20,20 Q-35,0 -20,-20 Z" fill="#B85D43" opacity="0.9"/>
+                        <path d="M0,0 M-14,-14 Q0,-25 14,-14 Q25,0 14,14 Q0,25 -14,14 Q-25,0 -14,-14 Z" fill="#C97A63"/>
+                        <circle cx="0" cy="0" r="12" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="2 1"/>
+                        <circle cx="0" cy="0" r="8" fill="#D4AF37"/>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "crochet-purse",
+                name: "Crochet Hand Purse",
+                category: "crochet",
+                price: 899,
+                label: "Crochet",
+                description: "A strong and colorful red-orange purse with round wooden handles.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FAF8F0" rx="20"/>
+                    <g transform="translate(50,55)">
+                        <ellipse cx="0" cy="-28" rx="18" ry="12" fill="none" stroke="#8A6046" stroke-width="5.5"/>
+                        <circle cx="-11" cy="-18" r="2.5" fill="#D4AF37"/>
+                        <circle cx="11" cy="-18" r="2.5" fill="#D4AF37"/>
+                        <path d="M-26,-14 C-26,-14 26,-14 26,-14 C30,15 26,28 18,28 C10,28 -10,28 -18,28 C-26,28 -30,15 -26,-14 Z" fill="#B85D43"/>
+                        <path d="M-22,-8 C-14,4 -4,-8 6,4 C16,-8 22,4 26,-8" fill="none" stroke="#C97A63" stroke-width="2"/>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "crochet-flower",
+                name: "Crochet Sunflower",
+                category: "crochet",
+                price: 99,
+                label: "Crochet",
+                description: "A bright yellow crochet sunflower with a green stem, perfect for placing in a vase.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FDFBF7" rx="20"/>
+                    <g transform="translate(50,50)">
+                        <path d="M0,0 L0,45" fill="none" stroke="#828C74" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M0,22 Q12,14 18,22 Q10,28 0,22" fill="#828C74"/>
+                        <g fill="#D4AF37">
+                            <path d="M0,0 Q8,-22 0,-30 Q-8,-22 0,0" transform="rotate(0)"/>
+                            <path d="M0,0 Q8,-22 0,-30 Q-8,-22 0,0" transform="rotate(45)"/>
+                            <path d="M0,0 Q8,-22 0,-30 Q-8,-22 0,0" transform="rotate(90)"/>
+                            <path d="M0,0 Q8,-22 0,-30 Q-8,-22 0,0" transform="rotate(135)"/>
+                        </g>
+                        <circle cx="0" cy="0" r="13" fill="#3D382E" stroke="#D4AF37" stroke-width="1"/>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "crochet-bouquet",
+                name: "Crochet Flower Bouquet",
+                category: "crochet",
+                price: 1299,
+                label: "Crochet",
+                description: "A lovely handmade bouquet of cream roses and yellow sunflowers wrapped nicely in green paper.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FAF8F0" rx="20"/>
+                    <g transform="translate(50,55)">
+                        <path d="M-28,-24 C-10,-42 10,-42 28,-24 L10,32 L-10,32 Z" fill="#828C74" opacity="0.8"/>
+                        <circle cx="0" cy="18" r="3" fill="#FAF8F0" stroke="#3D382E" stroke-width="1.5"/>
+                        <g transform="translate(-10,-12)">
+                            <circle cx="0" cy="0" r="9" fill="#FAF8F0" stroke="#B85D43" stroke-width="1"/>
+                            <circle cx="0" cy="0" r="3" fill="#B85D43"/>
+                        </g>
+                        <g transform="translate(10,-8)">
+                            <circle cx="0" cy="0" r="9" fill="#D4AF37"/>
+                            <circle cx="0" cy="0" r="4" fill="#3D382E"/>
+                        </g>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "eyeglass-holder",
+                name: "Minion Glasses Cover",
+                category: "crochet",
+                price: 349,
+                label: "Crochet",
+                description: "A fun yellow and blue knitted cover to protect your glasses from scratches.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FDFBF7" rx="20"/>
+                    <g transform="translate(50,50)">
+                        <rect x="-35" y="-18" width="70" height="36" rx="18" fill="#D4AF37"/>
+                        <path d="M-35,0 L35,0 L35,18 C35,28 25,28 15,28 L-15,28 C-25,28 -35,28 -35,18 Z" fill="#1D4ED8"/>
+                        <g transform="translate(-12,0)">
+                            <circle cx="0" cy="0" r="10" fill="#9CA3AF" stroke="#211E18" stroke-width="1.5"/>
+                            <circle cx="0" cy="0" r="7" fill="#FFF"/>
+                            <circle cx="0" cy="0" r="3" fill="#211E18"/>
+                        </g>
+                        <g transform="translate(12,0)">
+                            <circle cx="0" cy="0" r="10" fill="#9CA3AF" stroke="#211E18" stroke-width="1.5"/>
+                            <circle cx="0" cy="0" r="7" fill="#FFF"/>
+                            <circle cx="0" cy="0" r="3" fill="#211E18"/>
+                        </g>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "lippan-hanger",
+                name: "Lippan Mirror Wall Art",
+                category: "lippan",
+                price: 1499,
+                label: "Lippan",
+                description: "Beautiful round white clay wall art with shiny little mirrors that catch the sunset light.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FAF8F0" rx="20"/>
+                    <g transform="translate(50,50)">
+                        <circle cx="0" cy="0" r="40" fill="#EAE1CE" stroke="#3D382E" stroke-width="2"/>
+                        <circle cx="0" cy="0" r="32" fill="none" stroke="#FAF8F0" stroke-width="2.5"/>
+                        <path d="M0,-40 L0,40 M-40,0 L42,0" stroke="#FAF8F0" stroke-width="1"/>
+                        <circle cx="0" cy="0" r="7" fill="#FFF" stroke="#9CA3AF" stroke-width="1"/>
+                    </g>
+                </svg>`
+            },
+            {
+                id: "lippan-idol",
+                name: "Lippan Ganesha Wall Frame",
+                category: "lippan",
+                price: 1999,
+                label: "Lippan",
+                description: "A handmade clay Ganesha wall frame with shiny mirrors, perfect for housewarmings or festivals.",
+                svg: `<svg viewBox="0 0 100 100" class="w-full h-full p-4">
+                    <rect width="100" height="100" fill="#FDFBF7" rx="20"/>
+                    <g transform="translate(50,50)">
+                        <rect x="-36" y="-36" width="72" height="72" rx="18" fill="#EAE1CE" stroke="#3D382E" stroke-width="1.5"/>
+                        <rect x="-30" y="-30" width="60" height="60" rx="12" fill="none" stroke="#FAF8F0" stroke-width="2.5"/>
+                        <g stroke="#FAF8F0" stroke-width="2" fill="none" stroke-linecap="round">
+                            <path d="M-20,-12 C-26,-20 -12,-26 -6,-14" />
+                            <path d="M20,-12 C26,-20 14,-26 8,-14" />
+                            <path d="M-6,-14 L0,-26 L6,-14 Z" fill="#D4AF37" stroke="#3D382E" stroke-width="1"/>
+                        </g>
+                    </g>
+                </svg>`
+            }
+        ];
+
+        let cart = [];
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group h-full relative';
+                
+                card.innerHTML = `
+                    <div class="relative aspect-square w-full bg-cream-100 overflow-hidden border-b border-cream-200/70 p-2">
+                        ${product.svg}
+                        <div class="absolute top-4 left-4 bg-cream-900/90 text-cream-50 text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-accent-gold/20">
+                            ${product.label}
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between gap-4">
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="editorial-title text-lg text-cream-900 font-bold group-hover:text-terracotta-600 transition-colors duration-200">${product.name}</h3>
+                                <span class="text-sm font-bold text-terracotta-600 shrink-0">₹${product.price}</span>
+                            </div>
+                            <p class="text-cream-800 text-[11px] font-light leading-relaxed">${product.description}</p>
+                        </div>
+
+                        <div class="pt-1 grid grid-cols-2 gap-2">
+                            <button onclick="addToBag('${product.id}')" class="h-11 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-xl text-[9px] sm:text-[10px] uppercase tracking-wider font-bold transition flex items-center justify-center gap-1.5 active:scale-95">
+                                <i class="fa-solid fa-plus text-[8px]"></i> Add to Bag
+                            </button>
+                            <a href="https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(`Hello Aesthetic Kalakari Studio! I would love to order the handmade item:\n\n- *Item:* ${product.name}\n- *Price:* ₹${product.price}\n\nPlease let me know when this can be delivered. Thank you!`)}" target="_blank" class="h-11 bg-cream-900 hover:bg-terracotta-600 text-cream-50 rounded-xl text-[9px] sm:text-[10px] uppercase tracking-wider font-bold transition text-center flex items-center justify-center gap-1.5 active:scale-95">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCatalog(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300";
+            });
+            const selectedBtn = document.getElementById(`filter-btn-${category}`);
+            if (selectedBtn) {
+                selectedBtn.className = "filter-btn shrink-0 px-5 py-2.5 bg-cream-900 text-cream-50 rounded-full text-[10px] uppercase tracking-widest font-extrabold transition-all duration-300";
+            }
+            renderProducts(category);
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            const isClosed = drawer.classList.contains('translate-x-full');
+            
+            if (isClosed) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function addToBag(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.product.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`${product.name} added to your bag.`);
+        }
+
+        function updateQty(productId, delta) {
+            const cartItem = cart.find(item => item.product.id === productId);
+            if (!cartItem) return;
+
+            cartItem.qty += delta;
+            if (cartItem.qty <= 0) {
+                cart = cart.filter(item => item.product.id !== productId);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const countElement = document.getElementById('cart-count');
+            const mobileBadge = document.getElementById('mobile-cart-badge');
+            const subtotalQty = document.getElementById('cart-subtotal-qty');
+            const totalElement = document.getElementById('cart-total');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            countElement.textContent = totalQty;
+            
+            if (totalQty > 0) {
+                mobileBadge.textContent = totalQty;
+                mobileBadge.classList.remove('hidden');
+            } else {
+                mobileBadge.classList.add('hidden');
+            }
+
+            subtotalQty.textContent = `${totalQty} item${totalQty !== 1 ? 's' : ''}`;
+
+            const totalPrice = cart.reduce((sum, item) => sum + (item.product.price * item.qty), 0);
+            totalElement.textContent = `₹${totalPrice}`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center space-y-3 py-20 px-4">
+                        <i class="fa-solid fa-box-open text-cream-300 text-4xl"></i>
+                        <p class="text-[10px] uppercase tracking-widest text-cream-800 font-extrabold">Your bag is empty</p>
+                        <p class="text-xs text-cream-800 font-light max-w-xs leading-relaxed">Add handmade items from our catalog to get started.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = '';
+                cart.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex items-center gap-3 sm:gap-4 bg-cream-100 p-3 sm:p-4 rounded-2xl border border-cream-200 justify-between';
+                    itemDiv.innerHTML = `
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 bg-cream-50 rounded-xl overflow-hidden shrink-0 border border-cream-200">
+                            ${item.product.svg}
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-cream-900 truncate leading-tight">${item.product.name}</h4>
+                            <p class="text-[9px] sm:text-[10px] text-terracotta-600 font-bold mt-0.5">₹${item.product.price} each</p>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <button onclick="updateQty('${item.product.id}', -1)" class="w-7 h-7 rounded-full bg-cream-200 hover:bg-cream-300 text-cream-900 flex items-center justify-center text-xs transition active:scale-90" aria-label="Decrease quantity"><i class="fa-solid fa-minus text-[8px]"></i></button>
+                            <span class="text-xs font-extrabold text-cream-900 w-3 text-center">${item.qty}</span>
+                            <button onclick="updateQty('${item.product.id}', 1)" class="w-7 h-7 rounded-full bg-cream-200 hover:bg-cream-300 text-cream-900 flex items-center justify-center text-xs transition active:scale-90" aria-label="Increase quantity"><i class="fa-solid fa-plus text-[8px]"></i></button>
+                        </div>
+                    `;
+                    container.appendChild(itemDiv);
+                });
+            }
+        }
+
+        // WhatsApp Checkout and custom compilations
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                showToast("Your bag is empty! Please add some items first.");
+                return;
+            }
+
+            let message = `Hello Aesthetic Kalakari! I would love to order these handmade items from your catalog:\n\n`;
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const subCost = item.product.price * item.qty;
+                total += subCost;
+                message += `${index + 1}. *${item.product.name}* (Quantity: ${item.qty}) → ₹${subCost}\n`;
+            });
+
+            message += `\n*Total Order Price:* ₹${total}\n\nPlease let me know how to make the payment and when they can be delivered. Thank you!`;
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function sendCustomWhatsApp() {
+            const item = document.getElementById('custom-item').value;
+            const colors = document.getElementById('custom-colors').value || "Standard Colors";
+            const size = document.getElementById('custom-size').value || "Standard Size";
+            const occasion = document.getElementById('custom-occasion').value || "No Specific Date";
+
+            const customMsg = `Hello Aesthetic Kalakari! I would love to order a custom item:\n\n` +
+                              `- *Item Type:* ${item}\n` +
+                              `- *My Selected Colors:* ${colors}\n` +
+                              `- *Size Needed:* ${size}\n` +
+                              `- *Need By / Date:* ${occasion}\n\n` +
+                              `Please let me know how much this will cost and when you can send it. Thank you!`;
+
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(customMsg)}`, '_blank');
+        }
+
+        window.onscroll = function() {
+            const header = document.getElementById('main-header');
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+                header.classList.add('shadow-md', 'py-1.5', 'sm:py-2');
+                header.classList.remove('py-3', 'sm:py-4');
+            } else {
+                header.classList.remove('shadow-md', 'py-1.5', 'sm:py-2');
+                header.classList.add('py-3', 'sm:py-4');
+            }
+        };
+
+        window.onload = function() {
+            renderProducts();
+            updateCartUI();
+        };
+    </script>
+</body>
+</html>
