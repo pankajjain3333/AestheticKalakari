@@ -243,6 +243,25 @@
           transform: translateY(0);
         }
       }
+
+      /* Offer ticker marquee */
+      @keyframes ticker-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .offer-ticker-track {
+        display: flex;
+        width: max-content;
+        animation: ticker-scroll 28s linear infinite;
+      }
+      .offer-ticker-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Offer banner slide fade */
+      .offer-slide-fade {
+        transition: opacity 0.35s ease;
+      }
     </style>
   </head>
   <body
@@ -252,6 +271,15 @@
       class="bg-cream-900 text-cream-100 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase py-2.5 px-4 text-center font-bold border-b border-accent-gold/25 relative z-50"
     >
       <span>Handmade Gifts • Order Directly on WhatsApp</span>
+    </div>
+
+    <!-- Offer Ticker Strip -->
+    <div id="offer-ticker-bar" class="bg-terracotta-600 text-cream-50 overflow-hidden py-2 relative z-50 border-b border-terracotta-700/40">
+      <div class="flex items-center gap-0">
+        <div class="offer-ticker-track items-center gap-0 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase" id="offer-ticker-track">
+          <!-- Populated by JS -->
+        </div>
+      </div>
     </div>
 
     <!-- Global Toast Alert (Mobile Optimized Position) -->
@@ -659,6 +687,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Offer Banner (driven by OFFERS array in script) -->
+        <div id="offer-banner-wrap" class="mb-10 sm:mb-14"></div>
 
         <!-- Responsive Catalog Card Grid matrix -->
         <div
@@ -1203,6 +1234,7 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-cream-800 flex flex-col md:flex-row justify-between items-center text-[9px] sm:text-[10px] text-cream-300 font-light tracking-wider uppercase gap-4 text-center"
       >
         <p>© 2026 Aesthetic Kalakari Studio. All Rights Reserved.</p>
+        <p>Designed &amp; created with ♥ by <a href="https://zozoai.in" target="_blank" rel="noopener" class="hover:text-cream-100 underline underline-offset-2 transition-colors">zozo.ai</a></p>
         <!-- <p class="flex gap-4">
                 <a href="#" class="hover:text-white">Privacy</a>
                 <span>•</span>
@@ -1297,6 +1329,188 @@
 
     <script>
       let WHATSAPP_PHONE = "9098919111";
+
+      // ── OFFERS ──────────────────────────────────────────────────────────────
+      // Add, remove, or edit offers here. Each offer appears in both the
+      // ticker strip at the top and the banner card above the product grid.
+      // ctaFilter: "all" | "combo" | "keychain" | "eyeglass" | "bouquet" | "handbag"
+      const OFFERS = [
+        {
+          badge: "Exclusive Offer",
+          headline: "Get a Premium Crochet Keychain FREE",
+          subline: "Hurry up, Limited to 50 customers only.",
+          icon: "fa-tags",
+          cta: "Shop Now",
+          ctaFilter: "all",
+          image: "images/CUPCAKE BLISS KEYCHAIN.PNG",
+          imageAlt: "Handmade crochet keychain"
+        }
+        // Add more offers below like this:
+        // ,{
+        //   badge: "Festival Special",
+        //   headline: "Flat 15% OFF on All Combo Sets",
+        //   subline: "Order any combo today and save big — limited stock!",
+        //   icon: "fa-gift",
+        //   cta: "Shop Combos",
+        //   ctaFilter: "combo",
+        //   image: "images/CANDY CLOUD CROCHET HAIR SET.PNG",
+        //   imageAlt: "Crochet combo set"
+        // }
+      ];
+
+      // ── Offer ticker strip ───────────────────────────────────────────────────
+      function initOfferTicker() {
+        const track = document.getElementById("offer-ticker-track");
+        const bar   = document.getElementById("offer-ticker-bar");
+        if (!track || OFFERS.length === 0) { bar && (bar.style.display = "none"); return; }
+
+        const sep = `<span class="mx-6 text-accent-gold opacity-60">✦</span>`;
+        const items = OFFERS.map(o =>
+          `<span class="whitespace-nowrap">${o.headline}</span>${sep}`
+        ).join("");
+        // duplicate for seamless infinite loop
+        track.innerHTML = items + items;
+
+        // Adjust speed based on content length
+        const totalChars = OFFERS.reduce((s, o) => s + o.headline.length, 0);
+        const duration = Math.max(18, totalChars * 0.5);
+        track.style.animationDuration = duration + "s";
+      }
+
+      // ── Offer banner card (above products) ──────────────────────────────────
+      function renderOfferBanner() {
+        const wrap = document.getElementById("offer-banner-wrap");
+        if (!wrap || OFFERS.length === 0) return;
+        let currentIdx = 0;
+        let rotateTimer = null;
+
+        // Outer shell: left content area + right image panel side-by-side on sm+
+        wrap.innerHTML = `
+          <div class="relative rounded-3xl overflow-hidden shadow-xl border border-terracotta-700/40 flex flex-col sm:flex-row">
+
+            <!-- Left: gradient content area -->
+            <div class="relative flex-1">
+              <div class="absolute inset-0 bg-gradient-to-br from-terracotta-600 to-terracotta-700 pointer-events-none"></div>
+              <div class="absolute inset-0 opacity-[0.06] pointer-events-none"
+                   style="background-image: radial-gradient(circle at 20% 50%, #F4E8C1 0%, transparent 60%), radial-gradient(circle at 80% 20%, #D4AF37 0%, transparent 50%);">
+              </div>
+
+              <!-- Slide content (text + mobile thumbnail) -->
+              <div id="offer-slide-content" class="relative z-10 offer-slide-fade px-6 py-6 sm:px-8 sm:py-8"></div>
+
+              <!-- Navigation dots -->
+              ${OFFERS.length > 1
+                ? `<div id="offer-dots" class="relative z-10 flex justify-center gap-2 pb-4 sm:pb-5"></div>`
+                : ""}
+            </div>
+
+            <!-- Right: desktop image panel (hidden on mobile, visible sm+) -->
+            <div id="offer-image-panel" class="hidden sm:block relative w-48 md:w-56 lg:w-64 shrink-0 overflow-hidden">
+              <!-- Populated per offer by showOffer() -->
+            </div>
+
+          </div>
+        `;
+
+        function showOffer(idx) {
+          const o = OFFERS[idx];
+          const content    = document.getElementById("offer-slide-content");
+          const imgPanel   = document.getElementById("offer-image-panel");
+
+          content.style.opacity = "0";
+
+          setTimeout(() => {
+            // Mobile thumbnail — shown only below sm breakpoint
+            const mobilePic = o.image ? `
+              <div class="sm:hidden flex justify-center mb-5">
+                <div class="w-24 h-24 rounded-2xl overflow-hidden border-2 border-cream-50/25 shadow-lg">
+                  <img src="${o.image}" alt="${o.imageAlt || o.headline}"
+                       class="w-full h-full object-cover">
+                </div>
+              </div>
+            ` : "";
+
+            content.innerHTML = `
+              ${mobilePic}
+              <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
+
+                <!-- Icon badge — desktop only (image panel takes visual role on sm+) -->
+                <div class="hidden sm:flex shrink-0 w-12 h-12 rounded-full bg-cream-900/25 items-center justify-center border border-accent-gold/30">
+                  <i class="fa-solid fa-tag text-accent-gold text-lg"></i>
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1 text-center sm:text-left space-y-1.5">
+                  <span class="inline-block text-[8px] uppercase tracking-[0.25em] font-extrabold text-accent-gold bg-cream-900/25 px-3 py-1 rounded-full border border-accent-gold/25">
+                    ${o.badge}
+                  </span>
+                  <h3 class="editorial-title text-2xl sm:text-3xl text-cream-50 font-bold leading-tight mt-1">${o.headline}</h3>
+                  <p class="text-cream-200 text-xs font-light leading-relaxed">${o.subline}</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="shrink-0">
+                  <button
+                    onclick="filterCatalog('${o.ctaFilter}'); document.getElementById('shop').scrollIntoView({behavior:'smooth'})"
+                    class="group px-6 py-3 bg-cream-50 hover:bg-accent-goldlight text-cream-900 rounded-full text-[10px] uppercase tracking-[0.18em] font-extrabold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap flex items-center gap-2 active:scale-95">
+                    ${o.cta}
+                    <i class="fa-solid fa-arrow-right text-[9px] group-hover:translate-x-0.5 transition-transform"></i>
+                  </button>
+                </div>
+              </div>
+            `;
+            content.style.opacity = "1";
+
+            // Desktop image panel
+            if (imgPanel) {
+              if (o.image) {
+                imgPanel.className = "hidden sm:block relative w-48 md:w-56 lg:w-64 shrink-0 overflow-hidden";
+                imgPanel.innerHTML = `
+                  <img src="${o.image}" alt="${o.imageAlt || o.headline}"
+                       class="absolute inset-0 w-full h-full object-cover">
+                  <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-terracotta-700/70 to-transparent pointer-events-none"></div>
+                `;
+              } else {
+                // No image: collapse the panel so layout stays clean
+                imgPanel.className = "hidden";
+                imgPanel.innerHTML = "";
+              }
+            }
+          }, 180);
+
+          // Dots
+          if (OFFERS.length > 1) {
+            const dots = document.getElementById("offer-dots");
+            if (dots) {
+              dots.innerHTML = OFFERS.map((_, i) => `
+                <button onclick="window._offerGoTo(${i})"
+                        class="rounded-full transition-all duration-300 ${i === idx ? "w-5 h-2 bg-cream-50" : "w-2 h-2 bg-cream-50/35 hover:bg-cream-50/60"}"
+                        aria-label="Offer ${i + 1}"></button>
+              `).join("");
+            }
+          }
+        }
+
+        function startRotate() {
+          stopRotate();
+          if (OFFERS.length > 1) {
+            rotateTimer = setInterval(() => {
+              currentIdx = (currentIdx + 1) % OFFERS.length;
+              showOffer(currentIdx);
+            }, 5500);
+          }
+        }
+        function stopRotate() { clearInterval(rotateTimer); }
+
+        window._offerGoTo = function(idx) {
+          currentIdx = idx;
+          showOffer(idx);
+          startRotate();
+        };
+
+        showOffer(0);
+        startRotate();
+      }
 
       // function updateWhatsAppNumber() {
       //     const input = document.getElementById('config-phone');
@@ -1743,6 +1957,8 @@
       window.onload = function () {
         renderProducts();
         updateCartUI();
+        initOfferTicker();
+        renderOfferBanner();
       };
 
       // Track WhatsApp events via GA4 — called directly from each function
