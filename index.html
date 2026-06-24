@@ -211,6 +211,24 @@
         scrollbar-width: none;
       }
 
+      /* iOS Safari fallback: aspect-ratio is unsupported on iOS < 15 */
+      .product-img-wrap {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden;
+        background-color: #F5F0E1;
+        border-bottom: 1px solid rgba(234, 225, 206, 0.7);
+        flex-shrink: 0;
+      }
+      .product-img-wrap img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       /* Micro-animations */
       .animate-fade-in {
         animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1522,8 +1540,8 @@
             "bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group h-full relative";
 
           card.innerHTML = `
-                    <div class="relative aspect-square w-full bg-cream-100 overflow-hidden border-b border-cream-200/70">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="product-img-wrap">
+                        <img src="${encodeURI(product.image)}" alt="${product.name}" class="transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute top-4 left-4 bg-cream-900/90 text-cream-50 text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-accent-gold/20">
                             ${product.label}
                         </div>
@@ -1653,7 +1671,7 @@
               "flex items-center gap-3 sm:gap-4 bg-cream-100 p-3 sm:p-4 rounded-2xl border border-cream-200 justify-between";
             itemDiv.innerHTML = `
                         <div class="w-11 h-11 sm:w-12 sm:h-12 bg-cream-50 rounded-xl overflow-hidden shrink-0 border border-cream-200">
-                            <img src="${item.product.image}" alt="${item.product.name}" class="w-full h-full object-cover">
+                            <img src="${encodeURI(item.product.image)}" alt="${item.product.name}" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 min-w-0">
                             <h4 class="text-xs font-bold text-cream-900 truncate leading-tight">${item.product.name}</h4>
