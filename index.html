@@ -157,7 +157,7 @@
 
             <!-- Bag Navigation Interface -->
             <div class="flex items-center space-x-3 sm:space-x-5">
-                <a href="https://instagram.com" target="_blank" class="text-cream-800 hover:text-terracotta-600 text-lg p-2 transition-colors duration-200" title="Visit Instagram" aria-label="Instagram Profile">
+                <a href="https://instagram.com/aesthetickalakari_" target="_blank" class="text-cream-800 hover:text-terracotta-600 text-lg p-2 transition-colors duration-200" title="Visit Instagram" aria-label="Instagram Profile">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
                 <button onclick="toggleCart()" class="relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-cream-200 hover:bg-cream-300 rounded-full transition-all duration-300 group" aria-label="Open Shopping Bag">
@@ -207,7 +207,7 @@
             <div class="md:col-span-7 space-y-5 sm:space-y-6 md:space-y-7 text-center md:text-left order-2 md:order-1 animate-fade-in">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-cream-200/60 rounded-full border border-accent-gold/25">
                     <span class="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse"></span>
-                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-cream-800 font-bold">01 Handmade Studio</span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-cream-800 font-bold">#1 Handmade Studio</span>
                 </div>
                 
                 <h1 class="editorial-title text-3xl sm:text-5xl lg:text-6xl text-cream-900 leading-[1.2] md:leading-[1.15] font-light">
@@ -396,7 +396,7 @@
                     </div>
                     <div>
                         <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Ananya R.</h4>
-                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Bengaluru</p>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Raipur</p>
                     </div>
                 </div>
 
@@ -412,7 +412,7 @@
                     </div>
                     <div>
                         <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Karthik & Meera</h4>
-                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Pune</p>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Hyderabad</p>
                     </div>
                 </div>
 
@@ -428,7 +428,7 @@
                     </div>
                     <div>
                         <h4 class="text-xs font-extrabold uppercase tracking-wider text-cream-900">Sneha P.</h4>
-                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Surat</p>
+                        <p class="text-[9px] uppercase text-cream-800 tracking-widest mt-0.5">Jagdalpur</p>
                     </div>
                 </div>
             </div>
@@ -544,7 +544,7 @@
                 </p>
                 <div class="flex gap-4 text-sm text-cream-300 pt-1">
                     <a href="https://instagram.com/aesthetickalakari_" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('Hello Aesthetic Kalakari Team')}" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="WhatsApp"><i class="fa-solid fa-phone"></i></a>
+                    <a href="https://wa.me/9098919111?text=Hello, Aesthetic Kalakari Team" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="WhatsApp"><i class="fa-solid fa-whatsapp"></i></a>
                     <!-- <a href="https://pinterest.com" target="_blank" class="hover:text-accent-gold p-1.5 transition" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a> -->
                 </div>
             </div>
@@ -683,6 +683,16 @@
 
         // List of products with real product images
         const PRODUCTS = [
+            {
+                id: "rosette-royale-handbag",
+                name: "Rosette Royale Handbag",
+                category: "handbag",
+                mrp: 1620,
+                price: 1350,
+                label: "Hand Bag",
+                description: "An elegant rosette handbag to complete your beautiful outfit.",
+                image: "images/ROSETTE ROYALE HANDBAG.PNG"
+            },
             {
                 id: "candy-cloud-crochet-hair-set",
                 name: "Candy Cloud Crochet Hair Set",
@@ -832,16 +842,6 @@
                 label: "Keychain",
                 description: "A fun pizza pocket charm keychain for pizza lovers everywhere.",
                 image: "images/PIZZA POCKET CHARM KEYCHAIN.PNG"
-            },
-            {
-                id: "rosette-royale-handbag",
-                name: "Rosette Royale Handbag",
-                category: "handbag",
-                mrp: 1620,
-                price: 1350,
-                label: "Hand Bag",
-                description: "An elegant rosette handbag to complete your beautiful outfit.",
-                image: "images/ROSETTE ROYALE HANDBAG.PNG"
             },
             {
                 id: "sunflower-scrunchie-clip-set",
@@ -1002,7 +1002,7 @@
                     itemDiv.className = 'flex items-center gap-3 sm:gap-4 bg-cream-100 p-3 sm:p-4 rounded-2xl border border-cream-200 justify-between';
                     itemDiv.innerHTML = `
                         <div class="w-11 h-11 sm:w-12 sm:h-12 bg-cream-50 rounded-xl overflow-hidden shrink-0 border border-cream-200">
-                            ${item.product.svg}
+                            <img src="${item.product.image}" alt="${item.product.name}" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 min-w-0">
                             <h4 class="text-xs font-bold text-cream-900 truncate leading-tight">${item.product.name}</h4>
