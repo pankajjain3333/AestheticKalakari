@@ -7,6 +7,21 @@
     <!-- Primary title: 50–60 chars ideal -->
     <title>Aesthetic Kalakari | Handmade Crochet & Lippan Art — India</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BWD3RSFPV4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BWD3RSFPV4");
+    </script>
+
     <!-- Meta description: 140–160 chars. Affects click-through rate in search. -->
     <meta
       name="description"
@@ -1581,6 +1596,7 @@
           cart.push({ product, qty: 1 });
         }
 
+        trackGA4('add_to_bag', product.name);
         updateCartUI();
         showToast(`${product.name} added to your bag.`);
       }
@@ -1671,6 +1687,7 @@
         });
 
         message += `\n*Total Order Price:* ₹${total}\n\nPlease let me know how to make the payment and when they can be delivered. Thank you!`;
+        trackGA4('whatsapp_checkout', 'checkout_button');
         window.open(
           `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`,
           "_blank",
@@ -1684,6 +1701,7 @@
           return;
         }
         const customMsg = `Hello Aesthetic Kalakari! I have a custom order request:\n\n${message}\n\nPlease let me know the price and delivery time. Thank you!`;
+        trackGA4('whatsapp_custom_order', 'custom_order_button');
         window.open(
           `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(customMsg)}`,
           "_blank",
@@ -1708,6 +1726,26 @@
         renderProducts();
         updateCartUI();
       };
+
+      // Track WhatsApp events via GA4 — called directly from each function
+      function trackGA4(eventName, label) {
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, {
+            event_category: 'conversion',
+            event_label: label
+          });
+        }
+      }
+
+      // Track dynamic product "Order Now" clicks via event delegation
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('product-grid').addEventListener('click', function (e) {
+          const link = e.target.closest('a[href*="wa.me"]');
+          if (!link) return;
+          const productName = link.closest('.group')?.querySelector('h3')?.textContent?.trim() || 'unknown';
+          trackGA4('whatsapp_order_now', productName);
+        });
+      });
     </script>
   </body>
 </html>
