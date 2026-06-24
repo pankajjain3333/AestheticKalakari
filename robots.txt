@@ -1,0 +1,7 @@
+# robots.txt — Aesthetic Kalakari
+# https://aesthetickalakari.com/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aesthetickalakari.com/sitemap.xml
