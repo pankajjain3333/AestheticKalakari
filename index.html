@@ -1674,8 +1674,8 @@
         const items = OFFERS.map(o =>
           `<span class="whitespace-nowrap">${o.headline}</span>${sep}`
         ).join("");
-        // duplicate for seamless infinite loop
-        track.innerHTML = items + items;
+        // repeat enough copies to fill wide screens seamlessly
+        track.innerHTML = items.repeat(8);
 
         // Adjust speed based on content length
         const totalChars = OFFERS.reduce((s, o) => s + o.headline.length, 0);
