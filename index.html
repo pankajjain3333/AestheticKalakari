@@ -61,7 +61,10 @@
       content="Beautiful handmade crochet items and Lippan mirror art — made with love in Chhattisgarh, India. Custom orders welcome. Order directly on WhatsApp."
     />
     <!-- 📸 Replace with your best product photo. Min 1200×630px recommended. -->
-    <meta property="og:image" content="https://aesthetickalakari.com/images/c/meta-image.webp" />
+    <meta
+      property="og:image"
+      content="https://aesthetickalakari.com/images/c/meta-image.webp"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -83,7 +86,10 @@
       content="Beautiful handmade crochet items and Lippan mirror art — made with love in Chhattisgarh, India. Custom orders welcome."
     />
     <!-- 📸 Can reuse the same og:image or use a 1:1 square for Twitter -->
-    <meta name="twitter:image" content="https://aesthetickalakari.com/images/c/meta-image.webp" />
+    <meta
+      name="twitter:image"
+      content="https://aesthetickalakari.com/images/c/meta-image.webp"
+    />
     <meta
       name="twitter:image:alt"
       content="Handmade crochet and Lippan art by Aesthetic Kalakari"
@@ -218,7 +224,7 @@
         width: 100%;
         padding-bottom: 100%;
         overflow: hidden;
-        background-color: #F5F0E1;
+        background-color: #f5f0e1;
         border-bottom: 1px solid rgba(234, 225, 206, 0.7);
         flex-shrink: 0;
       }
@@ -247,8 +253,12 @@
 
       /* Offer ticker marquee */
       @keyframes ticker-scroll {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
       }
       .offer-ticker-track {
         display: flex;
@@ -278,300 +288,448 @@
 
     <!-- JSON-LD Structured Data: LocalBusiness + Products -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://aesthetickalakari.com/#business",
-          "name": "Aesthetic Kalakari",
-          "description": "Shop handmade crochet keychains, flower bouquets, and Lippan mirror art from Aesthetic Kalakari — a handmade studio in Chhattisgarh, India. Custom orders welcome. Order directly on WhatsApp.",
-          "url": "https://aesthetickalakari.com/",
-          "image": "https://aesthetickalakari.com/images/c/meta-image.webp",
-          "logo": "https://aesthetickalakari.com/logo/logo-without-bg.png",
-          "priceRange": "₹109 – ₹1499",
-          "currenciesAccepted": "INR",
-          "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "Chhattisgarh",
-            "addressCountry": "IN"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://aesthetickalakari.com/#business",
+            "name": "Aesthetic Kalakari",
+            "description": "Shop handmade crochet keychains, flower bouquets, and Lippan mirror art from Aesthetic Kalakari — a handmade studio in Chhattisgarh, India. Custom orders welcome. Order directly on WhatsApp.",
+            "url": "https://aesthetickalakari.com/",
+            "image": "https://aesthetickalakari.com/images/c/meta-image.webp",
+            "logo": "https://aesthetickalakari.com/logo/logo-without-bg.png",
+            "priceRange": "₹109 – ₹1499",
+            "currenciesAccepted": "INR",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "Chhattisgarh",
+              "addressCountry": "IN"
+            },
+            "sameAs": ["https://www.instagram.com/aesthetickalakari_/"]
           },
-          "sameAs": [
-            "https://www.instagram.com/aesthetickalakari_/"
-          ]
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#rosette-royale-handbag",
-          "name": "Rosette Royale Handbag",
-          "description": "An elegant rosette handbag to complete your beautiful outfit.",
-          "image": "https://aesthetickalakari.com/images/c/ROSETTE-ROYALE-HANDBAG.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "1350",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#rosette-royale-handbag",
+            "name": "Rosette Royale Handbag",
+            "description": "An elegant rosette handbag to complete your beautiful outfit.",
+            "image": "https://aesthetickalakari.com/images/c/ROSETTE-ROYALE-HANDBAG.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "1350",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#candy-cloud-crochet-hair-set",
+            "name": "Candy Cloud Crochet Hair Set",
+            "description": "A cute and colorful crochet hair set to brighten up your daily look.",
+            "image": "https://aesthetickalakari.com/images/c/CANDY-CLOUD-CROCHET-HAIR-SET.webp",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "349",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#lavender-lace-crochet-hair-set",
+            "name": "Lavender Lace Crochet Hair Set",
+            "description": "A lovely lavender crochet hair set for a soft and elegant style.",
+            "image": "https://aesthetickalakari.com/images/c/LAVENDER-LACE-CROCHET-HAIR-SET.webp",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "289",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#cupcake-bliss-keychain",
+            "name": "Cupcake Bliss Keychain",
+            "description": "A sweet cupcake keychain to add charm to your keys or bag.",
+            "image": "https://aesthetickalakari.com/images/c/CUPCAKE-BLISS-KEYCHAIN.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#cute-pencil-buddy-keyring",
+            "name": "Cute Pencil Buddy Keyring",
+            "description": "A fun pencil-shaped keyring, perfect for students and stationery lovers.",
+            "image": "https://aesthetickalakari.com/images/c/CUTE-PENCIL-BUDDY-KEYRING.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#happy-burger-keyring",
+            "name": "Happy Burger Keyring",
+            "description": "A cute burger keyring to make your everyday items look delicious.",
+            "image": "https://aesthetickalakari.com/images/c/HAPPY-BURGER-KEYRING.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#mint-sprinkle-popsicle-keychain",
+            "name": "Mint Sprinkle Popsicle Keychain",
+            "description": "A refreshing mint popsicle keychain to keep your summer vibes alive.",
+            "image": "https://aesthetickalakari.com/images/c/MINT-SPRINKLE-POPSICLE-KEYCHAIN.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#painting-tools-keychain",
+            "name": "Painting Tools Keychain",
+            "description": "A creative painting tools keychain for artists and art lovers.",
+            "image": "https://aesthetickalakari.com/images/c/PAINTING-TOOLS-KEYCHAIN.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#sandwich-buddy-crochet-keychain",
+            "name": "Sandwich Buddy Crochet Keychain",
+            "description": "A tasty-looking sandwich crochet keychain for a fun and quirky touch.",
+            "image": "https://aesthetickalakari.com/images/c/SANDWICH-BUDDY-CROCHET-KEYCHAIN.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#cute-frog-eyeglass-holder",
+            "name": "Cute Frog Eyeglass Holder",
+            "description": "A cute frog eyeglass holder to keep your glasses safe and handy.",
+            "image": "https://aesthetickalakari.com/images/c/CUTE-FROG-EYEGLASS-HOLDER.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "269",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#eternal-red-rose-bouquet",
+            "name": "Eternal Red Rose Bouquet",
+            "description": "A beautiful eternal red rose bouquet that never fades, perfect for gifting.",
+            "image": "https://aesthetickalakari.com/images/c/ETERNAL-RED-ROSE-BOUQUET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "1499",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#forever-sunflower-bouquet",
+            "name": "Forever Sunflower Bouquet",
+            "description": "A bright forever sunflower bouquet to bring sunshine into any room.",
+            "image": "https://aesthetickalakari.com/images/c/FOREVER-SUNFLOWER-BOUQUET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "259",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#minion-eye-glass-holder",
+            "name": "Minion Eye Glass Holder",
+            "description": "A fun minion eyeglass holder to safely store your glasses with a smile.",
+            "image": "https://aesthetickalakari.com/images/c/MINION-EYE-GLASS-HOLDER.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "269",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#old-instagram-eye-glass-holder",
+            "name": "Old Instagram Eye Glass Holder",
+            "description": "A retro Instagram eyeglass holder for a cool and vintage look.",
+            "image": "https://aesthetickalakari.com/images/c/OLD-INSTAGRAM-EYE-GLASS-HOLDER.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "269",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#pink-petals-crochet-sling-set",
+            "name": "Pink Petals Crochet Sling Set",
+            "description": "A pretty pink crochet sling set to carry your essentials in style.",
+            "image": "https://aesthetickalakari.com/images/c/PINK-PETALS-CROCHET-SLING-SET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "789",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#pizza-pocket-charm-keychain",
+            "name": "Pizza Pocket Charm Keychain",
+            "description": "A fun pizza pocket charm keychain for pizza lovers everywhere.",
+            "image": "https://aesthetickalakari.com/images/c/PIZZA-POCKET-CHARM-KEYCHAIN.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "109",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#sunflower-scrunchie-clip-set",
+            "name": "Sunflower Scrunchie & Clip Set",
+            "description": "A bright sunflower scrunchie and clip set for a sunny, cheerful hairstyle.",
+            "image": "https://aesthetickalakari.com/images/c/SUNFLOWER-SCRUNCHIE-&-CLIP-SET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "299",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#sunshine-daisy-mini-bag-clip-set",
+            "name": "Sunshine Daisy Mini Bag & Clip Set",
+            "description": "A cute daisy mini bag and clip set for a fresh, floral look.",
+            "image": "https://aesthetickalakari.com/images/c/SUNSHINE-DAISY-MINI-BAG-&-CLIP-SET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "789",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#seven-chakra-lippan-art",
+            "name": "Seven Chakra Lippan Art",
+            "description": "A beautiful Seven Chakra Lippan Art piece to bring positive energy to your space.",
+            "image": "https://aesthetickalakari.com/images/c/SEVEN-CHAKRA-LIPPAN-ART.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "5999",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#cute-honey-bee-hair-clip",
+            "name": "Cute Honey Bee Hair Clip",
+            "description": "A cute honey bee hair clip to add a sweet touch to your hairstyle.",
+            "image": "https://aesthetickalakari.com/images/c/CUTE-HONEY-BEE-HAIR-CLIP.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#candy-hearts-crochet",
+            "name": "Candy Hearts Crochet",
+            "description": "Lovely candy hearts crochet accessory for a fun and playful look.",
+            "image": "https://aesthetickalakari.com/images/c/CANDY-HEARTS-CROCHET.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "98",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#little-daisy-charm-bow",
+            "name": "Little Daisy Charm Bow",
+            "description": "A little daisy charm bow to keep your hair stylish and cute.",
+            "image": "https://aesthetickalakari.com/images/c/LITTLE-DAISY-CHARM-BOW.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#love-knot-hair-clip",
+            "name": "Love Knot Hair Clip",
+            "description": "An elegant love knot hair clip for a chic and simple style.",
+            "image": "https://aesthetickalakari.com/images/c/LOVE-KNOT-HAIR-CLIP.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "98",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#love-rose-hair-clip",
+            "name": "Love Rose Hair Clip",
+            "description": "A beautiful love rose hair clip to add a floral touch to your look.",
+            "image": "https://aesthetickalakari.com/images/c/LOVE-ROSE-HAIR-CLIP.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#ocean-bloom-hair-clip",
+            "name": "Ocean Bloom Hair Clip",
+            "description": "A refreshing ocean bloom hair clip for a breezy and beautiful style.",
+            "image": "https://aesthetickalakari.com/images/c/OCEAN-BLOOM-HAIR-CLIP.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "98",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#rosey-bloom-hair",
+            "name": "Rosey Bloom Hair",
+            "description": "A pretty rosey bloom hair accessory for a charming everyday look.",
+            "image": "https://aesthetickalakari.com/images/c/ROSEY-BLOOM-HAIR.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#sunflower-hair-clip",
+            "name": "Sunflower Hair Clip",
+            "description": "A bright sunflower hair clip to bring sunshine to your hairstyle.",
+            "image": "https://aesthetickalakari.com/images/c/SUNFLOWER-HAIR-CLIP.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://aesthetickalakari.com/#doremon-crochet-mobile-case",
+            "name": "Doremon Crochet Mobile Case",
+            "description": "A fun Doraemon crochet mobile case to protect your phone in style.",
+            "image": "https://aesthetickalakari.com/images/c/DOREMON-CROCHET-MOBILE-CASE.jpg",
+            "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
+            "offers": {
+              "@type": "Offer",
+              "price": "489",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://aesthetickalakari.com/"
+            }
           }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#candy-cloud-crochet-hair-set",
-          "name": "Candy Cloud Crochet Hair Set",
-          "description": "A cute and colorful crochet hair set to brighten up your daily look.",
-          "image": "https://aesthetickalakari.com/images/c/CANDY-CLOUD-CROCHET-HAIR-SET.webp",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "349",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#lavender-lace-crochet-hair-set",
-          "name": "Lavender Lace Crochet Hair Set",
-          "description": "A lovely lavender crochet hair set for a soft and elegant style.",
-          "image": "https://aesthetickalakari.com/images/c/LAVENDER-LACE-CROCHET-HAIR-SET.webp",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "289",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#cupcake-bliss-keychain",
-          "name": "Cupcake Bliss Keychain",
-          "description": "A sweet cupcake keychain to add charm to your keys or bag.",
-          "image": "https://aesthetickalakari.com/images/c/CUPCAKE-BLISS-KEYCHAIN.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#cute-pencil-buddy-keyring",
-          "name": "Cute Pencil Buddy Keyring",
-          "description": "A fun pencil-shaped keyring, perfect for students and stationery lovers.",
-          "image": "https://aesthetickalakari.com/images/c/CUTE-PENCIL-BUDDY-KEYRING.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#happy-burger-keyring",
-          "name": "Happy Burger Keyring",
-          "description": "A cute burger keyring to make your everyday items look delicious.",
-          "image": "https://aesthetickalakari.com/images/c/HAPPY-BURGER-KEYRING.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#mint-sprinkle-popsicle-keychain",
-          "name": "Mint Sprinkle Popsicle Keychain",
-          "description": "A refreshing mint popsicle keychain to keep your summer vibes alive.",
-          "image": "https://aesthetickalakari.com/images/c/MINT-SPRINKLE-POPSICLE-KEYCHAIN.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#painting-tools-keychain",
-          "name": "Painting Tools Keychain",
-          "description": "A creative painting tools keychain for artists and art lovers.",
-          "image": "https://aesthetickalakari.com/images/c/PAINTING-TOOLS-KEYCHAIN.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#sandwich-buddy-crochet-keychain",
-          "name": "Sandwich Buddy Crochet Keychain",
-          "description": "A tasty-looking sandwich crochet keychain for a fun and quirky touch.",
-          "image": "https://aesthetickalakari.com/images/c/SANDWICH-BUDDY-CROCHET-KEYCHAIN.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#cute-frog-eyeglass-holder",
-          "name": "Cute Frog Eyeglass Holder",
-          "description": "A cute frog eyeglass holder to keep your glasses safe and handy.",
-          "image": "https://aesthetickalakari.com/images/c/CUTE-FROG-EYEGLASS-HOLDER.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "269",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#eternal-red-rose-bouquet",
-          "name": "Eternal Red Rose Bouquet",
-          "description": "A beautiful eternal red rose bouquet that never fades, perfect for gifting.",
-          "image": "https://aesthetickalakari.com/images/c/ETERNAL-RED-ROSE-BOUQUET.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "1499",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#forever-sunflower-bouquet",
-          "name": "Forever Sunflower Bouquet",
-          "description": "A bright forever sunflower bouquet to bring sunshine into any room.",
-          "image": "https://aesthetickalakari.com/images/c/FOREVER-SUNFLOWER-BOUQUET.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "259",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#minion-eye-glass-holder",
-          "name": "Minion Eye Glass Holder",
-          "description": "A fun minion eyeglass holder to safely store your glasses with a smile.",
-          "image": "https://aesthetickalakari.com/images/c/MINION-EYE-GLASS-HOLDER.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "269",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#old-instagram-eye-glass-holder",
-          "name": "Old Instagram Eye Glass Holder",
-          "description": "A retro Instagram eyeglass holder for a cool and vintage look.",
-          "image": "https://aesthetickalakari.com/images/c/OLD-INSTAGRAM-EYE-GLASS-HOLDER.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "269",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#pink-petals-crochet-sling-set",
-          "name": "Pink Petals Crochet Sling Set",
-          "description": "A pretty pink crochet sling set to carry your essentials in style.",
-          "image": "https://aesthetickalakari.com/images/c/PINK-PETALS-CROCHET-SLING-SET.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "789",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#pizza-pocket-charm-keychain",
-          "name": "Pizza Pocket Charm Keychain",
-          "description": "A fun pizza pocket charm keychain for pizza lovers everywhere.",
-          "image": "https://aesthetickalakari.com/images/c/PIZZA-POCKET-CHARM-KEYCHAIN.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "109",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#sunflower-scrunchie-clip-set",
-          "name": "Sunflower Scrunchie & Clip Set",
-          "description": "A bright sunflower scrunchie and clip set for a sunny, cheerful hairstyle.",
-          "image": "https://aesthetickalakari.com/images/c/SUNFLOWER-SCRUNCHIE-&-CLIP-SET.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "299",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://aesthetickalakari.com/#sunshine-daisy-mini-bag-clip-set",
-          "name": "Sunshine Daisy Mini Bag & Clip Set",
-          "description": "A cute daisy mini bag and clip set for a fresh, floral look.",
-          "image": "https://aesthetickalakari.com/images/c/SUNSHINE-DAISY-MINI-BAG-&-CLIP-SET.jpg",
-          "brand": { "@type": "Brand", "name": "Aesthetic Kalakari" },
-          "offers": {
-            "@type": "Offer",
-            "price": "789",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://aesthetickalakari.com/"
-          }
-        }
-      ]
-    }
+        ]
+      }
     </script>
   </head>
   <body
@@ -584,9 +742,15 @@
     </div>
 
     <!-- Offer Ticker Strip -->
-    <div id="offer-ticker-bar" class="bg-terracotta-600 text-cream-50 overflow-hidden py-2 relative z-50 border-b border-terracotta-700/40">
+    <div
+      id="offer-ticker-bar"
+      class="bg-terracotta-600 text-cream-50 overflow-hidden py-2 relative z-50 border-b border-terracotta-700/40"
+    >
       <div class="flex items-center gap-0">
-        <div class="offer-ticker-track items-center gap-0 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase" id="offer-ticker-track">
+        <div
+          class="offer-ticker-track items-center gap-0 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase"
+          id="offer-ticker-track"
+        >
           <!-- Populated by JS -->
         </div>
       </div>
@@ -999,6 +1163,27 @@
                 class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300"
               >
                 Hand Bags
+              </button>
+              <button
+                onclick="filterCatalog('hair-accessories')"
+                id="filter-btn-hair-accessories"
+                class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300"
+              >
+                Hair Accessories
+              </button>
+              <button
+                onclick="filterCatalog('lippanart')"
+                id="filter-btn-lippanart"
+                class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300"
+              >
+                Lippan Art
+              </button>
+              <button
+                onclick="filterCatalog('mobile-cover')"
+                id="filter-btn-mobile-cover"
+                class="filter-btn shrink-0 px-5 py-2.5 bg-cream-200 hover:bg-cream-300 text-cream-900 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300"
+              >
+                Mobile Covers
               </button>
             </div>
           </div>
@@ -1551,7 +1736,16 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-cream-800 flex flex-col md:flex-row justify-between items-center text-[9px] sm:text-[10px] text-cream-300 font-light tracking-wider uppercase gap-4 text-center"
       >
         <p>© 2026 Aesthetic Kalakari Studio. All Rights Reserved.</p>
-        <p>Designed &amp; created with ♥ by <a href="https://zozoai.in" target="_blank" rel="noopener noreferrer" class="hover:text-cream-100 underline underline-offset-2 transition-colors">zozo.ai</a></p>
+        <p>
+          Designed &amp; created with ♥ by
+          <a
+            href="https://zozoai.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-cream-100 underline underline-offset-2 transition-colors"
+            >zozo.ai</a
+          >
+        </p>
         <!-- <p class="flex gap-4">
                 <a href="#" class="hover:text-white">Privacy</a>
                 <span>•</span>
@@ -1660,8 +1854,8 @@
           cta: "Shop Now",
           ctaFilter: "all",
           image: "images/c/CUPCAKE-BLISS-KEYCHAIN.jpg",
-          imageAlt: "Handmade crochet keychain"
-        }
+          imageAlt: "Handmade crochet keychain",
+        },
         // Add more offers below like this:
         // ,{
         //   badge: "Festival Special",
@@ -1678,12 +1872,15 @@
       // ── Offer ticker strip ───────────────────────────────────────────────────
       function initOfferTicker() {
         const track = document.getElementById("offer-ticker-track");
-        const bar   = document.getElementById("offer-ticker-bar");
-        if (!track || OFFERS.length === 0) { bar && (bar.style.display = "none"); return; }
+        const bar = document.getElementById("offer-ticker-bar");
+        if (!track || OFFERS.length === 0) {
+          bar && (bar.style.display = "none");
+          return;
+        }
 
         const sep = `<span class="mx-6 text-accent-gold opacity-60">✦</span>`;
-        const items = OFFERS.map(o =>
-          `<span class="whitespace-nowrap">${o.headline}</span>${sep}`
+        const items = OFFERS.map(
+          (o) => `<span class="whitespace-nowrap">${o.headline}</span>${sep}`,
         ).join("");
         // repeat enough copies to fill wide screens seamlessly
         track.innerHTML = items.repeat(8);
@@ -1716,9 +1913,11 @@
               <div id="offer-slide-content" class="relative z-10 offer-slide-fade px-6 py-6 sm:px-8 sm:py-8"></div>
 
               <!-- Navigation dots -->
-              ${OFFERS.length > 1
-                ? `<div id="offer-dots" class="relative z-10 flex justify-center gap-2 pb-4 sm:pb-5"></div>`
-                : ""}
+              ${
+                OFFERS.length > 1
+                  ? `<div id="offer-dots" class="relative z-10 flex justify-center gap-2 pb-4 sm:pb-5"></div>`
+                  : ""
+              }
             </div>
 
             <!-- Right: desktop image panel (hidden on mobile, visible sm+) -->
@@ -1731,21 +1930,23 @@
 
         function showOffer(idx) {
           const o = OFFERS[idx];
-          const content    = document.getElementById("offer-slide-content");
-          const imgPanel   = document.getElementById("offer-image-panel");
+          const content = document.getElementById("offer-slide-content");
+          const imgPanel = document.getElementById("offer-image-panel");
 
           content.style.opacity = "0";
 
           setTimeout(() => {
             // Mobile thumbnail — shown only below sm breakpoint
-            const mobilePic = o.image ? `
+            const mobilePic = o.image
+              ? `
               <div class="sm:hidden flex justify-center mb-5">
                 <div class="w-24 h-24 rounded-2xl overflow-hidden border-2 border-cream-50/25 shadow-lg">
                   <img src="${o.image}" alt="${o.imageAlt || o.headline}"
                        class="w-full h-full object-cover">
                 </div>
               </div>
-            ` : "";
+            `
+              : "";
 
             content.innerHTML = `
               ${mobilePic}
@@ -1781,7 +1982,8 @@
             // Desktop image panel
             if (imgPanel) {
               if (o.image) {
-                imgPanel.className = "hidden sm:block relative w-48 md:w-56 lg:w-64 shrink-0 overflow-hidden";
+                imgPanel.className =
+                  "hidden sm:block relative w-48 md:w-56 lg:w-64 shrink-0 overflow-hidden";
                 imgPanel.innerHTML = `
                   <img src="${o.image}" alt="${o.imageAlt || o.headline}"
                        class="absolute inset-0 w-full h-full object-cover">
@@ -1799,11 +2001,13 @@
           if (OFFERS.length > 1) {
             const dots = document.getElementById("offer-dots");
             if (dots) {
-              dots.innerHTML = OFFERS.map((_, i) => `
+              dots.innerHTML = OFFERS.map(
+                (_, i) => `
                 <button onclick="window._offerGoTo(${i})"
                         class="rounded-full transition-all duration-300 ${i === idx ? "w-5 h-2 bg-cream-50" : "w-2 h-2 bg-cream-50/35 hover:bg-cream-50/60"}"
                         aria-label="Offer ${i + 1}"></button>
-              `).join("");
+              `,
+              ).join("");
             }
           }
         }
@@ -1817,9 +2021,11 @@
             }, 5500);
           }
         }
-        function stopRotate() { clearInterval(rotateTimer); }
+        function stopRotate() {
+          clearInterval(rotateTimer);
+        }
 
-        window._offerGoTo = function(idx) {
+        window._offerGoTo = function (idx) {
           currentIdx = idx;
           showOffer(idx);
           startRotate();
@@ -1868,10 +2074,10 @@
         {
           id: "candy-cloud-crochet-hair-set",
           name: "Candy Cloud Crochet Hair Set",
-          category: "combo",
+          category: "hair-accessories",
           mrp: 419,
           price: 349,
-          label: "Combo",
+          label: "Hair Accessories",
           description:
             "A cute and colorful crochet hair set to brighten up your daily look.",
           image: "images/c/CANDY-CLOUD-CROCHET-HAIR-SET.webp",
@@ -1879,10 +2085,10 @@
         {
           id: "lavender-lace-crochet-hair-set",
           name: "Lavender Lace Crochet Hair Set",
-          category: "combo",
+          category: "hair-accessories",
           mrp: 347,
           price: 289,
-          label: "Combo",
+          label: "Hair Accessories",
           description:
             "A lovely lavender crochet hair set for a soft and elegant style.",
           image: "images/c/LAVENDER-LACE-CROCHET-HAIR-SET.webp",
@@ -2031,12 +2237,12 @@
           image: "images/c/PIZZA-POCKET-CHARM-KEYCHAIN.jpg",
         },
         {
-          id: "sunflower-scrunchie-clip-set",
+          id: "sunflower-scrunchie-hair-set",
           name: "Sunflower Scrunchie & Clip Set",
-          category: "combo",
+          category: "hair-accessories",
           mrp: 359,
           price: 299,
-          label: "Combo",
+          label: "Hair Accessories",
           description:
             "A bright sunflower scrunchie and clip set for a sunny, cheerful hairstyle.",
           image: "images/c/SUNFLOWER-SCRUNCHIE-&-CLIP-SET.jpg",
@@ -2051,6 +2257,116 @@
           description:
             "A cute daisy mini bag and clip set for a fresh, floral look.",
           image: "images/c/SUNSHINE-DAISY-MINI-BAG-&-CLIP-SET.jpg",
+        },
+        {
+          id: "seven-chakra-lippan-art",
+          name: "Seven Chakra Lippan Art",
+          category: "lippanart",
+          mrp: 7199,
+          price: 5999,
+          label: "Lippan Art",
+          description:
+            "A beautiful Seven Chakra Lippan Art piece to bring positive energy to your space.",
+          image: "images/c/SEVEN-CHAKRA-LIPPAN-ART.jpg",
+        },
+        {
+          id: "cute-honey-bee-hair-clip",
+          name: "Cute Honey Bee Hair Clip",
+          category: "hair-accessories",
+          mrp: 119,
+          price: 99,
+          label: "Hair Accessories",
+          description:
+            "A cute honey bee hair clip to add a sweet touch to your hairstyle.",
+          image: "images/c/CUTE-HONEY-BEE-HAIR-CLIP.jpg",
+        },
+        {
+          id: "candy-hearts-crochet",
+          name: "Candy Hearts Crochet",
+          category: "hair-accessories",
+          mrp: 118,
+          price: 98,
+          label: "Hair Accessories",
+          description:
+            "Lovely candy hearts crochet accessory for a fun and playful look.",
+          image: "images/c/CANDY-HEARTS-CROCHET.jpg",
+        },
+        {
+          id: "little-daisy-charm-bow",
+          name: "Little Daisy Charm Bow",
+          category: "hair-accessories",
+          mrp: 119,
+          price: 99,
+          label: "Hair Accessories",
+          description:
+            "A little daisy charm bow to keep your hair stylish and cute.",
+          image: "images/c/LITTLE-DAISY-CHARM-BOW.jpg",
+        },
+        {
+          id: "love-knot-hair-clip",
+          name: "Love Knot Hair Clip",
+          category: "hair-accessories",
+          mrp: 118,
+          price: 98,
+          label: "Hair Accessories",
+          description:
+            "An elegant love knot hair clip for a chic and simple style.",
+          image: "images/c/LOVE-KNOT-HAIR-CLIP.jpg",
+        },
+        {
+          id: "love-rose-hair-clip",
+          name: "Love Rose Hair Clip",
+          category: "hair-accessories",
+          mrp: 119,
+          price: 99,
+          label: "Hair Accessories",
+          description:
+            "A beautiful love rose hair clip to add a floral touch to your look.",
+          image: "images/c/LOVE-ROSE-HAIR-CLIP.jpg",
+        },
+        {
+          id: "ocean-bloom-hair-clip",
+          name: "Ocean Bloom Hair Clip",
+          category: "hair-accessories",
+          mrp: 118,
+          price: 98,
+          label: "Hair Accessories",
+          description:
+            "A refreshing ocean bloom hair clip for a breezy and beautiful style.",
+          image: "images/c/OCEAN-BLOOM-HAIR-CLIP.jpg",
+        },
+        {
+          id: "rosey-bloom-hair",
+          name: "Rosey Bloom Hair",
+          category: "hair-accessories",
+          mrp: 119,
+          price: 99,
+          label: "Hair Accessories",
+          description:
+            "A pretty rosey bloom hair accessory for a charming everyday look.",
+          image: "images/c/ROSEY-BLOOM-HAIR.jpg",
+        },
+        {
+          id: "sunflower-hair-clip",
+          name: "Sunflower Hair Clip",
+          category: "hair-accessories",
+          mrp: 119,
+          price: 99,
+          label: "Hair Accessories",
+          description:
+            "A bright sunflower hair clip to bring sunshine to your hairstyle.",
+          image: "images/c/SUNFLOWER-HAIR-CLIP.jpg",
+        },
+        {
+          id: "doremon-crochet-mobile-case",
+          name: "Doremon Crochet Mobile Case",
+          category: "mobile-cover",
+          mrp: 587,
+          price: 489,
+          label: "Mobile Cover",
+          description:
+            "A fun Doraemon crochet mobile case to protect your phone in style.",
+          image: "images/c/DOREMON-CROCHET-MOBILE-CASE.jpg",
         },
       ];
 
@@ -2145,7 +2461,7 @@
           cart.push({ product, qty: 1 });
         }
 
-        trackGA4('add_to_bag', product.name);
+        trackGA4("add_to_bag", product.name);
         updateCartUI();
         showToast(`${product.name} added to your bag.`);
       }
@@ -2236,7 +2552,7 @@
         });
 
         message += `\n*Total Order Price:* ₹${total}\n\nPlease let me know how to make the payment and when they can be delivered. Thank you!`;
-        trackGA4('whatsapp_checkout', 'checkout_button');
+        trackGA4("whatsapp_checkout", "checkout_button");
         window.open(
           `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`,
           "_blank",
@@ -2250,7 +2566,7 @@
           return;
         }
         const customMsg = `Hello Aesthetic Kalakari! I have a custom order request:\n\n${message}\n\nPlease let me know the price and delivery time. Thank you!`;
-        trackGA4('whatsapp_custom_order', 'custom_order_button');
+        trackGA4("whatsapp_custom_order", "custom_order_button");
         window.open(
           `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(customMsg)}`,
           "_blank",
@@ -2280,22 +2596,28 @@
 
       // Track WhatsApp events via GA4 — called directly from each function
       function trackGA4(eventName, label) {
-        if (typeof gtag === 'function') {
-          gtag('event', eventName, {
-            event_category: 'conversion',
-            event_label: label
+        if (typeof gtag === "function") {
+          gtag("event", eventName, {
+            event_category: "conversion",
+            event_label: label,
           });
         }
       }
 
       // Track dynamic product "Order Now" clicks via event delegation
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('product-grid').addEventListener('click', function (e) {
-          const link = e.target.closest('a[href*="wa.me"]');
-          if (!link) return;
-          const productName = link.closest('.group')?.querySelector('h3')?.textContent?.trim() || 'unknown';
-          trackGA4('whatsapp_order_now', productName);
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("product-grid")
+          .addEventListener("click", function (e) {
+            const link = e.target.closest('a[href*="wa.me"]');
+            if (!link) return;
+            const productName =
+              link
+                .closest(".group")
+                ?.querySelector("h3")
+                ?.textContent?.trim() || "unknown";
+            trackGA4("whatsapp_order_now", productName);
+          });
       });
     </script>
   </body>
