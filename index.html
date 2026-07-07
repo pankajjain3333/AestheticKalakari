@@ -1090,7 +1090,10 @@
     </section>
 
     <!-- Offer Banner (driven by OFFERS array in script) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <div
+      id="offer-banner-outer"
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14"
+    >
       <div id="offer-banner-wrap"></div>
     </div>
 
@@ -1849,16 +1852,16 @@
       // ticker strip at the top and the banner card above the product grid.
       // ctaFilter: "all" | "combo" | "keychain" | "eyeglass" | "bouquet" | "handbag"
       const OFFERS = [
-        {
-          badge: "Exclusive Offer",
-          headline: "Get a Premium Crochet Keychain FREE",
-          subline: "Hurry up, Limited to 50 customers only.",
-          icon: "fa-tags",
-          cta: "Shop Now",
-          ctaFilter: "all",
-          image: "images/c/CUPCAKE-BLISS-KEYCHAIN.jpg",
-          imageAlt: "Handmade crochet keychain",
-        },
+        // {
+        //   badge: "Exclusive Offer",
+        //   headline: "Get a Premium Crochet Keychain FREE",
+        //   subline: "Hurry up, Limited to 50 customers only.",
+        //   icon: "fa-tags",
+        //   cta: "Shop Now",
+        //   ctaFilter: "all",
+        //   image: "images/c/CUPCAKE-BLISS-KEYCHAIN.jpg",
+        //   imageAlt: "Handmade crochet keychain",
+        // },
         // Add more offers below like this:
         // ,{
         //   badge: "Festival Special",
@@ -1897,7 +1900,12 @@
       // ── Offer banner card (above products) ──────────────────────────────────
       function renderOfferBanner() {
         const wrap = document.getElementById("offer-banner-wrap");
-        if (!wrap || OFFERS.length === 0) return;
+        const outer = document.getElementById("offer-banner-outer");
+        if (!wrap) return;
+        if (OFFERS.length === 0) {
+          if (outer) outer.classList.add("hidden");
+          return;
+        }
         let currentIdx = 0;
         let rotateTimer = null;
 
@@ -2073,6 +2081,17 @@
           description:
             "An elegant rosette handbag to complete your beautiful outfit.",
           image: "images/c/ROSETTE-ROYALE-HANDBAG.jpg",
+        },
+        {
+          id: "seven-chakra-lippan-art",
+          name: "Seven Chakra Lippan Art",
+          category: "lippanart",
+          mrp: 7199,
+          price: 5999,
+          label: "Lippan Art",
+          description:
+            "A beautiful Seven Chakra Lippan Art piece to bring positive energy to your space.",
+          image: "images/c/SEVEN-CHAKRA-LIPPAN-ART.jpg",
         },
         {
           id: "candy-cloud-crochet-hair-set",
@@ -2260,17 +2279,6 @@
           description:
             "A cute daisy mini bag and clip set for a fresh, floral look.",
           image: "images/c/SUNSHINE-DAISY-MINI-BAG-&-CLIP-SET.png",
-        },
-        {
-          id: "seven-chakra-lippan-art",
-          name: "Seven Chakra Lippan Art",
-          category: "lippanart",
-          mrp: 7199,
-          price: 5999,
-          label: "Lippan Art",
-          description:
-            "A beautiful Seven Chakra Lippan Art piece to bring positive energy to your space.",
-          image: "images/c/SEVEN-CHAKRA-LIPPAN-ART.jpg",
         },
         {
           id: "cute-honey-bee-hair-clip",
